@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYI-KDohuMGCxVgVlc_91wOWaRV72DDI&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Bhiwani
+        const bhiwani = { lat: 28.7975, lng: 76.1322 };
+        // The map, centered at Bhiwani
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: bhiwani,
+        });
+        // The marker, positioned at Bhiwani
+        const marker = new google.maps.Marker({
+          position: bhiwani,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo With Center Bhiwani</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
